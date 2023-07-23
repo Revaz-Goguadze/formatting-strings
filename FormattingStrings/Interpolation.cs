@@ -4,15 +4,16 @@
     {
         public static string GetDepositCsv(int id, string name, string iban, decimal deposit, decimal balance, double interestRate)
         {
-            // TODO #4-1. Analyze the method unit tests and implement the method.
-            throw new NotImplementedException();
+            FormattableString csv = $@"{id},""{name}"",{balance:F2},""{interestRate:P2}"",""{deposit:C4}"",{iban}";
+            return FormattableString.Invariant(csv);
         }
 
         public static string GetProductCsv(int id, string name, int supplierId, int categoryId, string quantityPerUnit, double unitPrice, int unitInStock, int unitsOnOrder, int reorderLevel, bool discontinued)
         {
-            // TODO #4-2. Analyze the method unit tests and implement the method.
-            throw new NotImplementedException();
+            FormattableString csv = $@"{id},""{name}"",{supplierId},""{categoryId}"",{quantityPerUnit},""{unitPrice:F2}"",{unitInStock},""{unitsOnOrder}"",{reorderLevel},""{discontinued}""";
+            return FormattableString.Invariant(csv);
         }
+
 
         public static string GetDepositJson(int id, string name, string iban, decimal deposit, decimal balance, double interestRate)
         {
